@@ -73,12 +73,14 @@
         </div>
     </div>
 </nav>
-<h2 class="article-title" id="title">Finding simplicity in life</h2>
-<img src="https://raw.githubusercontent.com/kevin-powell/reponsive-web-design-bootcamp/master/Module%202-%20A%20simple%20life/img/life.jpg" alt="simple white desk on a white wall with a plant on the far right side" class="article-image">
+@foreach($blogs as $blog)
+    <h2 class="article-title" id="title">{{$blog->title}}</h2>
+<img src="{{asset($blog->photo)}}" alt="simple white desk on a white wall with a plant on the far right side" class="article-image">
 <p class="article-info">July 23, 2019 | 3 comments</p>
-<p class="article-body">Life can get complicated really quickly, but it doesn't have to be! There are many ways to simplify your life, a few of which we've explored in the past. This week we're taking a bit of a approach though, in how you can find simplicity in the life you already living.</p>
+<p class="article-body">{{$blog->content}}</p>
 <a href="#" class="article-read-more">CONTINUE READING</a>
 
+@endforeach
 
 </body>
 </html>

@@ -73,13 +73,20 @@
         </div>
     </div>
 </nav>
-<form action="{{route('post_blog')}}" method="post">
+<form action="{{route('post_blog')}}" method="post" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-md-10">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Title</span>
                 <input type="text" name="title" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="input-group mb-3">
+                <input type="file" name="photo" class="form-control" id="inputGroupFile02">
             </div>
         </div>
     </div>

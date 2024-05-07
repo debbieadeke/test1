@@ -9,7 +9,8 @@ class blogController extends Controller
 {
     public function blog()
     {
-        return view('blog.index');
+        $blogs=blog::all();
+        return view('blog.index',['blogs'=>$blogs]);
     }
     public function post()
     {
@@ -17,10 +18,15 @@ class blogController extends Controller
     }
     public function store(Request $request)
     {
+        $imageName = time().'.'.$request->photo->extension();
+        $request->photo->move(public_path('images'), $imageName);
         $blog = new blog();
-        $blog->title=$request->title;
-        $blog->content=$request->comment;
-        $blog->comment=0;
+        $blog->title = $request->title;
+        $blog->content = $request->comment;
+        $blog->comment = 0;
+        $blog->photo = 'images/'.$imageName;
         $blog->save();
+        return redirect()->route('blog');
+
     }
 }
