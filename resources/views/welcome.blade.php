@@ -25,21 +25,27 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('welcome') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url('/home') }}">Welcome</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('blog')}}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{route('post')}}">Post</a>
                 </li>
                 <li>
                     @if (Route::has('login'))
                         <nav class="-mx-3 flex flex-1 justify-end">
                             @auth
-                                <a
-                                    href="{{ url('/dashboard') }}"
-                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                                >
-                                    Navigation bar
-                                </a>
+{{--                                <a--}}
+{{--                                    href="{{ url('/dashboard') }}"--}}
+{{--                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"--}}
+{{--                                >--}}
+{{--                                    Navigation bar--}}
+{{--                                </a>--}}
                             @else
                                 <a
                                     href="{{ route('login') }}"
